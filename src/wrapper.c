@@ -1,7 +1,3 @@
-#include <SFCGAL/capi/sfcgal_c.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <stdarg.h>
 #include "wrapper.h"
 
 char sfcgal_last_warn[ERRLEN];
