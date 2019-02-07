@@ -1,5 +1,7 @@
 # sfcgal-sys
 
+[![Build Status Travis](https://travis-ci.org/mthh/sfcgal-sys.svg?branch=master)](https://travis-ci.org/mthh/sfcgal-sys)
+
 Rust low-level FFI bindings to [`SFCGAL`](http://oslandia.github.io/SFCGAL/) C API.  
 Don't use this crate directly, prefer it's higher-level wrapper : [sfcgal-rs](https://github.com/mthh/sfcgal-rs).
 
