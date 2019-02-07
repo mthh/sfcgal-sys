@@ -1,7 +1,7 @@
 #include "wrapper.h"
 
-__thread char sfcgal_last_warn[ERRLEN];
-__thread char sfcgal_last_err[ERRLEN];
+thread_local char sfcgal_last_warn[ERRLEN];
+thread_local char sfcgal_last_err[ERRLEN];
 
 
 int warning_wrapper(const char* format, ...) {
