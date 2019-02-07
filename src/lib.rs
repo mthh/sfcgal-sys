@@ -10,7 +10,7 @@ pub fn initialize() {
     static INIT: Once = ONCE_INIT;
     INIT.call_once(|| unsafe {
         sfcgal_init();
-        sfcgal_init_handlers();
+        w_sfcgal_init_handlers();
     });
 }
 
@@ -40,7 +40,7 @@ mod tests {
         initialize();
         let wkt1 = CString::new("POINT(1, 1)").expect("CString::new failed");
         let _point1 = unsafe { sfcgal_io_read_wkt(wkt1.as_ptr(), 10) };
-        let message = unsafe { sfcgal_get_last_error() };
+        let message = unsafe { w_sfcgal_get_last_error() };
         assert_eq!(
             _string(message),
             String::from("WKT parse error, Coordinate dimension < 2 (, 1)"),

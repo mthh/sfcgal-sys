@@ -20,15 +20,15 @@ int error_wrapper(const char* format, ...) {
     return 0;
 }
 
-int sfcgal_init_handlers() {
+int w_sfcgal_init_handlers() {
     sfcgal_set_error_handlers(warning_wrapper, error_wrapper);
     return 0;
 }
 
-char *sfcgal_get_last_error(void) {
+char *w_sfcgal_get_last_error(void) {
     return sfcgal_last_err;
 }
 
-char *sfcgal_get_last_warning(void) {
+char *w_sfcgal_get_last_warning(void) {
     return sfcgal_last_warn;
 }

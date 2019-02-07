@@ -21,6 +21,9 @@ fn main() {
         .whitelist_type("sfcgal_.*$")
         .whitelist_var("sfcgal_.*$")
         .whitelist_function("sfcgal_.*$")
+        .whitelist_type("w_sfcgal_.*$")
+        .whitelist_var("w_sfcgal_.*$")
+        .whitelist_function("w_sfcgal_.*$")
         .generate()
         .expect("Unable to generate bindings");
 

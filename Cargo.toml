@@ -4,6 +4,9 @@ version = "0.1.0"
 authors = ["Matthieu Viry <matthieu.viry@univ-grenoble-alpes.fr>"]
 edition = "2018"
 build = "build.rs"
+description = """
+Low-level FFI bindings to SFCGAL.
+"""
 
 [build-dependencies]
 bindgen = "0.47.1"
