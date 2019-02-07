@@ -15,4 +15,4 @@ before_install:
   - cd CGAL-4.13 && mkdir build && cd build && cmake -DCMAKE_INSTALL_PREFIX=$HOME/CGAL-4.13 .. && make && sudo make install && cd ../..
   - wget https://github.com/Oslandia/SFCGAL/archive/v1.3.6.tar.gz
   - tar -xzvf v1.3.6.tar.gz
-  - cd SFCGAL-1.3.6 && cmake . && make && sudo make install && cd ..
+  - cd SFCGAL-1.3.6 && cmake -DCMAKE_INSTALL_PREFIX=/usr . && make && sudo make install && cd ..
