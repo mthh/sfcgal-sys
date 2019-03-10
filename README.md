@@ -16,6 +16,9 @@ In addition to all the `sfcgal_` types and functions, this crate expose :
 - a Rust `initialize` function: it calls `sfcgal_init()` function then it calls a custom `w_sfcgal_init_handlers()` function which replace the error and warning handlers from `printf` to a char buffer. That `initialize` function internally uses `std::sync::ONCE_INIT` to ensure it's only called once.
 - two C functions `w_sfcgal_get_last_error` and `w_sfcgal_get_last_warning` which repectively reads the buffer containing the error message and the buffer containing the warning message.
 
+In the future it could probably be improved by not requiring SFCGAL to be installed as a system library.
+
+
 ## License
 
 Licensed under either of

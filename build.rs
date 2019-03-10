@@ -2,9 +2,8 @@ extern crate bindgen;
 extern crate cc;
 
 use std::env;
-use std::path::PathBuf;
 use std::path::Path;
-
+use std::path::PathBuf;
 
 fn main() {
     println!("cargo:rustc-link-lib=SFCGAL");

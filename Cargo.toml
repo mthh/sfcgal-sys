@@ -7,7 +7,11 @@ build = "build.rs"
 description = """
 Low-level FFI bindings to SFCGAL.
 """
+readme = "README.md"
+homepage = "https://github.com/mthh/sfcgal-sys"
+repository = "https://github.com/mthh/sfcgal-sys"
+categories = ["external-ffi-bindings"]
 
 [build-dependencies]
 bindgen = "0.47.1"
-cc = "*"
+cc = "~1.0"

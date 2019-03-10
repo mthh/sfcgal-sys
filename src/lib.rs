@@ -2,7 +2,7 @@
 #![allow(non_camel_case_types)]
 #![allow(non_snake_case)]
 
-use std::sync::{ONCE_INIT, Once};
+use std::sync::{Once, ONCE_INIT};
 
 include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
 
@@ -16,8 +16,8 @@ pub fn initialize() {
 
 #[cfg(test)]
 mod tests {
-    use std::ffi::{CStr, CString};
     use crate::*;
+    use std::ffi::{CStr, CString};
 
     fn _string(raw_ptr: *const std::os::raw::c_char) -> String {
         let c_str = unsafe { CStr::from_ptr(raw_ptr) };
@@ -31,7 +31,7 @@ mod tests {
         let point1 = unsafe { sfcgal_io_read_wkt(wkt1.as_ptr(), 14) };
         let wkt2 = CString::new("POINT(10.0 1.0)").expect("CString::new failed");
         let point2 = unsafe { sfcgal_io_read_wkt(wkt2.as_ptr(), 15) };
-        let distance = unsafe {sfcgal_geometry_distance(point1, point2) };
+        let distance = unsafe { sfcgal_geometry_distance(point1, point2) };
         assert_eq!(distance, 9.0);
     }
 
