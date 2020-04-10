@@ -2,12 +2,12 @@
 #![allow(non_camel_case_types)]
 #![allow(non_snake_case)]
 
-use std::sync::{Once, ONCE_INIT};
+use std::sync::Once;
 
 include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
 
 pub fn initialize() {
-    static INIT: Once = ONCE_INIT;
+    static INIT: Once = Once::new();
     INIT.call_once(|| unsafe {
         sfcgal_init();
         w_sfcgal_init_handlers();
