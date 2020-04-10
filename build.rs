@@ -1,12 +1,11 @@
 extern crate bindgen;
 extern crate cc;
 
-use std::path::Path;
-use std::path::PathBuf;
 use std::{
     env::{self, VarError},
     ffi::OsStr,
     iter,
+    path::PathBuf,
 };
 
 fn main() {
@@ -65,13 +64,13 @@ fn main() {
 
     {
         let mut build = cc::Build::new();
-        build.file("src/wrapper.c").out_dir(&Path::new("target/"));
+        build.file("src/wrapper.c");
 
         for include_path in include_paths.iter() {
             build.include(include_path);
         }
 
-        build.compile("sfcgalwrapper.a");
+        build.compile("sfcgalwrapper");
     }
 
     let bindings = bindgen::Builder::default()
