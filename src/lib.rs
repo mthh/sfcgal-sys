@@ -46,5 +46,4 @@ mod tests {
             String::from("WKT parse error, Coordinate dimension < 2 (, 1)"),
         );
     }
-
 }
