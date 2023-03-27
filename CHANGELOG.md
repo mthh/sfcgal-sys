@@ -1,7 +1,7 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## Unreleased
+## [0.5.0] - 2023-03-27
 ### Changed
 - Update `bindgen` version to `0.64`.
 - Generate bindings against latest SFCGAL version `1.4.1`.
