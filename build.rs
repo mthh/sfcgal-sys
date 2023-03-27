@@ -86,6 +86,7 @@ fn main() {
         .allowlist_type("w_sfcgal_.*$")
         .allowlist_var("w_sfcgal_.*$")
         .allowlist_function("w_sfcgal_.*$")
+        .size_t_is_usize(true)
         .generate()
         .expect("Unable to generate bindings");
 

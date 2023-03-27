@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.6.0] - 2023-03-27
+### Changed
+- Generate bindings with `size_t_is_usize` option.
+
 ## [0.5.0] - 2023-03-27
 ### Changed
 - Update `bindgen` version to `0.64`.
