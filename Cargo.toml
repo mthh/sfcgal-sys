@@ -10,6 +10,7 @@ Low-level FFI bindings to SFCGAL.
 """
 readme = "README.md"
 homepage = "https://github.com/mthh/sfcgal-sys"
+documentation = "https://mthh.github.io/sfcgal-sys/sfcgal_sys/"
 repository = "https://github.com/mthh/sfcgal-sys"
 categories = ["external-ffi-bindings"]
 

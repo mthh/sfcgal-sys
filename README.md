@@ -1,5 +1,6 @@
 # sfcgal-sys
 
+[![Build](https://github.com/mthh/sfcgal-sys/actions/workflows/test.yml/badge.svg)](https://github.com/mthh/sfcgal-sys/actions/workflows/test.yml)
 [![Crates.io](https://img.shields.io/crates/v/sfcgal-sys.svg)](https://crates.io/crates/sfcgal-sys)
 
 Rust low-level FFI bindings to [`SFCGAL`](http://oslandia.github.io/SFCGAL/) C API.  

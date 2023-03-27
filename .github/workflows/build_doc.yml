@@ -1,10 +1,10 @@
 on:
   push:
-    branches:
-      - master
+    tags:
+      - '*'
   pull_request:
 
-name: Build and run tests
+name: Build documentation on new release
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -16,3 +16,9 @@ jobs:
           unzip SFCGAL-v1.4.1.zip
           cd SFCGAL-v1.4.1 && cmake -DCMAKE_INSTALL_PREFIX=/usr . && make && sudo make install && cd ..
       - run: cargo test --all-features
+      - run: |
+          cargo doc
+          echo "<meta http-equiv=refresh content=0;url=sfcgal_sys/index.html>" > target/doc/index.html
+          sudo pip install ghp-import
+          ghp-import -n target/doc
+          git push -fq https://${GITHUB_TOKEN}@github.com/mthh/sfcgal-sys.git gh-pages
