@@ -21,7 +21,7 @@ fn main() {
             .split(',')
             .map(str::trim)
             .filter(|x| !x.is_empty())
-            .map(|path| {
+            .flat_map(|path| {
                 let out = iter::once(format!("cargo:rustc-link-search={}", path));
                 #[cfg(target_os = "macos")]
                 {
@@ -34,8 +34,7 @@ fn main() {
                 {
                     out
                 }
-            })
-            .flatten();
+            });
 
         cargo_metadata.extend(meta);
     }
@@ -81,12 +80,12 @@ fn main() {
                 .iter()
                 .map(|path| format!("-I{}", path.display())),
         )
-        .whitelist_type("sfcgal_.*$")
-        .whitelist_var("sfcgal_.*$")
-        .whitelist_function("sfcgal_.*$")
-        .whitelist_type("w_sfcgal_.*$")
-        .whitelist_var("w_sfcgal_.*$")
-        .whitelist_function("w_sfcgal_.*$")
+        .allowlist_type("sfcgal_.*$")
+        .allowlist_var("sfcgal_.*$")
+        .allowlist_function("sfcgal_.*$")
+        .allowlist_type("w_sfcgal_.*$")
+        .allowlist_var("w_sfcgal_.*$")
+        .allowlist_function("w_sfcgal_.*$")
         .generate()
         .expect("Unable to generate bindings");
 
