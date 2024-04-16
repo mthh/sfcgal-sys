@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.7.0] - 2023-04-16
+### Changed
+- Generate bindings against latest SFCGAL version `1.5.0`.
+- Update `bindgen` version to `0.69`.
+
 ## [0.6.0] - 2023-03-27
 ### Changed
 - Generate bindings with `size_t_is_usize` option.

@@ -3,9 +3,8 @@
 [![Build](https://github.com/mthh/sfcgal-sys/actions/workflows/test.yml/badge.svg)](https://github.com/mthh/sfcgal-sys/actions/workflows/test.yml)
 [![Crates.io](https://img.shields.io/crates/v/sfcgal-sys.svg)](https://crates.io/crates/sfcgal-sys)
 
-Rust low-level FFI bindings to [`SFCGAL`](https://sfcgal.gitlab.io/SFCGAL/) C API.  
+Rust low-level FFI bindings to [`SFCGAL`](https://sfcgal.gitlab.io/SFCGAL/) 1.5.x C API.  
 Don't use this crate directly, prefer it's higher-level wrapper : [sfcgal-rs](https://github.com/mthh/sfcgal-rs).
-
 
 ## Internals
 
