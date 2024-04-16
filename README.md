@@ -6,6 +6,8 @@
 Rust low-level FFI bindings to [`SFCGAL`](https://sfcgal.gitlab.io/SFCGAL/) 1.5.x C API.  
 Don't use this crate directly, prefer it's higher-level wrapper : [sfcgal-rs](https://github.com/mthh/sfcgal-rs).
 
+[Documentation](https://mthh.github.io/sfcgal-rs/sfcgal_sys/)
+
 ## Internals
 
 This crate contains a few lines of C code (compiled as a static library with `cc` crate) wrapping SFCGAL C API in order to replace the error and warning handlers (which use `printf` by default).  
