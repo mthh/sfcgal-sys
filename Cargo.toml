@@ -15,5 +15,5 @@ repository = "https://github.com/mthh/sfcgal-sys"
 categories = ["external-ffi-bindings"]
 
 [build-dependencies]
-bindgen = "0.64.0"
+bindgen = "0.69"
 cc = "1.0"
