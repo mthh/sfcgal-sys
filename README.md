@@ -2,7 +2,7 @@
 
 [![Build](https://github.com/mthh/sfcgal-sys/actions/workflows/test.yml/badge.svg)](https://github.com/mthh/sfcgal-sys/actions/workflows/test.yml)
 [![Crates.io](https://img.shields.io/crates/v/sfcgal-sys.svg)](https://crates.io/crates/sfcgal-sys)
-[![Static Badge](https://img.shields.io/badge/documentation-0.7-green)](https://mthh.github.io/sfcgal-sys/sfcgal_sys/)
+[![Documentation](https://img.shields.io/badge/documentation-0.7.0-green)](https://mthh.github.io/sfcgal-sys/sfcgal_sys/)
 
 Rust low-level FFI bindings to [`SFCGAL`](https://sfcgal.gitlab.io/SFCGAL/) 1.5.x C API.  
 Don't use this crate directly, prefer it's higher-level wrapper : [sfcgal-rs](https://github.com/mthh/sfcgal-rs).
