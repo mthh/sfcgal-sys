@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.8.0] - 2024-10-31
+### Changed
+- Generate bindings against latest SFCGAL version `2.0.0`.
+- Update `bindgen` version to `0.70`.
+
 ## [0.7.0] - 2024-04-16
 ### Changed
 - Generate bindings against latest SFCGAL version `1.5.0`.
