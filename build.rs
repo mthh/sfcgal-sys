@@ -16,6 +16,15 @@ fn main() {
     let link_paths_opt = env_var("SFCGAL_LINK_PATHS");
     let include_paths_opt = env_var("SFCGAL_INCLUDE_PATHS");
 
+    let prefix = if cfg!(target_os = "windows") {
+        // Try MSYS2 MinGW64 path detection
+        env_var("MSYS2_PATH").unwrap_or("C:\\msys64\\mingw64".to_owned())
+    } else if cfg!(target_os = "macos") {
+        env_var("HOMEBREW_PREFIX").unwrap_or("/opt/homebrew".to_owned())
+    } else {
+        "/usr".to_owned()
+    };
+
     if let Some(link_paths) = link_paths_opt {
         let meta = link_paths
             .split(',')
@@ -37,6 +46,13 @@ fn main() {
             });
 
         cargo_metadata.extend(meta);
+    } else if cfg!(target_os = "macos") {
+        println!("cargo:rustc-link-search=native={}/lib", prefix);
+    } else if cfg!(target_os = "linux") {
+        println!("cargo:rustc-link-search=native=/usr/local/lib");
+    } else if cfg!(target_os = "windows") {
+        #[cfg(target_os = "windows")]
+        println!("cargo:rustc-link-search=native={}\\lib", mingw_prefix);
     }
 
     if let Some(link_libs) = link_libs_opt {
@@ -58,7 +74,16 @@ fn main() {
             .filter(|x| !x.is_empty())
             .map(PathBuf::from)
             .collect(),
-        None => vec![PathBuf::from("/usr/include")],
+        None => {
+            // default_path
+            if cfg!(target_os = "macos") {
+                vec![PathBuf::from(format!("{}/include", prefix))]
+            } else if cfg!(target_os = "windows") {
+                vec![PathBuf::from(format!("{}\\include", prefix))]
+            } else {
+                vec![PathBuf::from("/usr/include"), PathBuf::from("/usr/local/include")]
+            }
+        },
     };
 
     {
