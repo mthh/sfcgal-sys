@@ -2,13 +2,13 @@
 
 [![Build](https://github.com/mthh/sfcgal-sys/actions/workflows/test.yml/badge.svg)](https://github.com/mthh/sfcgal-sys/actions/workflows/test.yml)
 [![Crates.io](https://img.shields.io/crates/v/sfcgal-sys.svg)](https://crates.io/crates/sfcgal-sys)
-[![Documentation](https://img.shields.io/badge/documentation-0.8.0-green)](https://mthh.github.io/sfcgal-sys/sfcgal_sys/)
+[![Documentation](https://img.shields.io/badge/documentation-0.9.0-green)](https://mthh.github.io/sfcgal-sys/sfcgal_sys/)
 
-Rust low-level FFI bindings to [`SFCGAL`](https://sfcgal.gitlab.io/SFCGAL/) 2.0.x C API.  
+Rust low-level FFI bindings to [`SFCGAL`](https://sfcgal.gitlab.io/SFCGAL/) 2.x.x C API.  
 Don't use this crate directly, prefer it's higher-level wrapper : [sfcgal-rs](https://github.com/mthh/sfcgal-rs).
 
 > [!IMPORTANT]
-> Note that the required version of SFCGAL is currently 2.0.x (latest version - 2024-10-10).  
+> Note that the required version of SFCGAL is currently 2.x.x.  
 > If you want to use SFCCAL 1.5.x, you can use the 0.7.x version of this crate / of [sfcgal-rs](https://github.com/mthh/sfcgal-rs).
 
 ## Internals

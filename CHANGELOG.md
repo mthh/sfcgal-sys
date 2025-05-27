@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.9.0] - 2025-05-27
+### Changed
+- Update `build.rs` to default to platform-specific include paths [#4](https://github.com/mthh/sfcgal-sys/pull/4)
+
 ## [0.8.0] - 2024-10-31
 ### Changed
 - Generate bindings against latest SFCGAL version `2.0.0`.
