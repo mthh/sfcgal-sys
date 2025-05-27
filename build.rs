@@ -81,9 +81,12 @@ fn main() {
             } else if cfg!(target_os = "windows") {
                 vec![PathBuf::from(format!("{}\\include", prefix))]
             } else {
-                vec![PathBuf::from("/usr/include"), PathBuf::from("/usr/local/include")]
+                vec![
+                    PathBuf::from("/usr/include"),
+                    PathBuf::from("/usr/local/include"),
+                ]
             }
-        },
+        }
     };
 
     {
